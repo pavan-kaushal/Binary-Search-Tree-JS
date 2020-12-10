@@ -123,12 +123,20 @@ removeNode(node, key)
 
 
 removeByHash(hash){
+    if(this.root==null){
+        alert("tree empty");
+        return;
+    }
     var node=this.root;
     if(hash==""){
         this.remove(node,node.data);
         return;
     }
     for (var i = 0; i < hash.length; i++) {
+        if(node==null){
+            alert("Invalid Hash : "+hash);
+            return;
+        }
         if(i==hash.length-1){
             var par=node;
         }
@@ -144,10 +152,7 @@ removeByHash(hash){
             alert("Hash Must Contain Only 1's and 0's");
             return;
         }
-        if(node==null){
-            alert("Invalid Hash : "+hash);
-            return;
-        }
+        
         }
         console.log("remove by hash: ",node.hash," node : ",node);
 
@@ -239,7 +244,6 @@ inorder(node)
 
     if(node !== null) 
     { 
-        
         if(node.left!=null){
         node.left.hash=node.hash+"0";
         ctx.beginPath();
