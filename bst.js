@@ -22,48 +22,44 @@ class BinarySearchTree
         this.root = null; 
         
     } 
-    insert(data) 
+    insert(value) 
     { 
         
-        var newNode = new Node(data); 
+        var newNode = new Node(value); 
                           
-         
         if(this.root === null) {
             this.root = newNode;
             newNode.position={ x:700 , y:40 }
         } 
-        else
-            this.insertNode(this.root, newNode); 
+        else{
+            //this.insertNode(this.root, newNode); 
+            var temp=this.root;
+            while(temp!=null){
+                console.log("( ",newNode.data,"<",temp.data," ) : ",value<temp.data,typeof(value))
+                if(Boolean(value<temp.data)){
+                    var parent=temp;
+                    temp=temp.left;//left
+                    console.log("left for ",newNode.data);
+                }
+                else{
+                    var parent=temp;
+                    temp=temp.right;//right
+                    console.log("right for ",newNode.data);
+
+                }
+            }
+            if(Boolean(value<parent.data)){//left
+                parent.left=newNode;
+                newNode.position={ x:parent.position.y+parent.position.x-300 , y:parent.position.y+70 }; 
+            }
+            else{//right
+                parent.right=newNode;
+                newNode.position={ x:parent.position.x-parent.position.y+300 , y:parent.position.y+70 };
+            }
+        }
     } 
 
-    insertNode(node, newNode) 
-    { 
-        if(newNode.data < node.data) 
-        { 
-           // newNode.hash=newNode.hash+"0";
-            if(node.left === null) {
-                node.left = newNode;
-                //set positions
-                newNode.position={ x:node.position.y+node.position.x-300 , y:node.position.y+70 }; 
-            }
-                else
-                this.insertNode(node.left, newNode);  
-        } 
-    
-        else
-        { 
-            //newNode.hash=newNode.hash+"1";
-            if(node.right === null) {
-                node.right = newNode;
-                //set positions 
-                newNode.position={ x:node.position.x-node.position.y+300 , y:node.position.y+70 };
-            }
-            else
-
-                this.insertNode(node.right,newNode); 
-        } 
-    } 
-
+ 
 
     remove(data) 
    { 
@@ -316,19 +312,13 @@ var BST = new BinarySearchTree();
 
 
 
-    var root = BST.getRootNode(); 
-     console.log("Root : ",root);
-     ctx.clearRect(0, 0, c.width, c.height);
-     BST.inorder(root);
-
-
 //////////-------frontend functions-------////////////////////////////
  function insert_node(){
     if(document.getElementById("insert").value.trim()==""){
         alert("Value Can't be Empty!!")
         return;
     }
-     BST.insert(document.getElementById("insert").value.trim() )
+     BST.insert(parseInt(document.getElementById("insert").value.trim()))
      var root = BST.getRootNode(); 
     console.log("Root : ",root);
     ctx.clearRect(0, 0, c.width, c.height);
@@ -336,7 +326,7 @@ var BST = new BinarySearchTree();
 }
 
 function delete_node(){
-    if(document.getElementById("delete").value.trim()==""){
+    if(parseInt(document.getElementById("delete").value.trim()=="")){
         alert("Value Can't be Empty!!")
         return;
     }
@@ -353,10 +343,6 @@ function delete_node(){
 }
 
 function delete_node_by_hash(){
-    if(document.getElementById("deleteByHash").value.trim()==""){
-        alert("Value Can't be Empty!!")
-        return;
-    }
     BST.removeByHash(document.getElementById("deleteByHash").value.trim())
     var root = BST.getRootNode(); 
     console.log("Root : ",root);
@@ -364,7 +350,3 @@ function delete_node_by_hash(){
     BST.inorder(root);
 }
 ///////////////////////////////////////////////////////////////////////////////
-
-
-
-
