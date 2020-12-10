@@ -10,6 +10,9 @@ implementation of BST using JavaScript and HTML
 
 
 ### 2 . delete an element based on hash
+![Screenshot 2020-12-10 190545](https://user-images.githubusercontent.com/66527924/101779196-ef01e780-3b1a-11eb-90da-2507d8aabac6.png)
+
+![Screenshot 2020-12-10 190631](https://user-images.githubusercontent.com/66527924/101779200-f0331480-3b1a-11eb-8151-07d9e57bc9aa.png)
 
 
 ### 3 . delete an element based on value
