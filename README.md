@@ -16,6 +16,9 @@ implementation of BST using JavaScript and HTML
 
 
 ### 3 . delete an element based on value
+![Screenshot 2020-12-10 190854](https://user-images.githubusercontent.com/66527924/101779454-4dc76100-3b1b-11eb-84a8-13dbd49224ff.png)
+
+![del](https://user-images.githubusercontent.com/66527924/101779456-4e5ff780-3b1b-11eb-9b38-32c67c4f9074.png)
 
 
 ### 4 . inorder function for displaying the Tree on HTML Canvas and resetting hashes after deletion and insertion
