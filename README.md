@@ -20,7 +20,7 @@ implementation of BST using JavaScript and HTML
 
 ![del](https://user-images.githubusercontent.com/66527924/101779456-4e5ff780-3b1b-11eb-9b38-32c67c4f9074.png)
 
-### 4 . range slider thar varies the radius of node upon silding
+### 4 . range slider that varies the radius of every node upon silding
 
 ![range slider](https://user-images.githubusercontent.com/66527924/101781373-bb748c80-3b1d-11eb-88d6-3174cf1358d1.png)
 
